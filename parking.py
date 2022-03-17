@@ -34,20 +34,20 @@ class parkingLot():
                 self.tickets -=1
                 break
 
-        def leaveGarage(self):
-            while True:
-                response = input("Ready to exit? Enter your ticket number: (Enter 'quit') ")
-                if response.lower() == 'quit':
-                    break
-                if int(response) not in self.currentTickect.keys():
-                    print("Please enter a valid ticket number. ")
-                elif self.currentTicket[int(response)] == False:
-                    print("Please pay your ticket to exit. ")
-                    self.payTicket()
-                else:
-                    print("Thank you, have a nice day!")
-                    self.currentTicket.pop(int(response))
-                    break
+    def leaveGarage(self):
+        while True:
+            response = input("Ready to exit? Enter your ticket number:(Enter 'quit') ")
+            if response.lower() == 'quit':
+                break
+            if int(response) not in self.currentTickect.keys():
+                print("Please enter a valid ticket number. ")
+            elif self.currentTicket[int(response)] == False:
+                print("Please pay your ticket to exit. ")
+                self.payTicket()
+            else:
+                print("Thank you, have a nice day!")
+                self.currentTicket.pop(int(response))
+                break
 parking_lot = parkingLot()
 
 def choices():
